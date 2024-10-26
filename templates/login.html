@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <div>
+        <form id="login_form">
+            <p>Enter your user name</p>
+            <input type="text" name="username"/>
+        </form>
+    </div>
+
+
+    <script>
+        let form = document.getElementById('login_form')
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault()
+            let username = e.target.username.value
+            let response = await fetch('/get_app_id/')
+            let data = await response.json()
+            let APP_ID = data.appId
+
+            localStorage.setItem('username', username)
+
+            sessionStorage.setItem('APP_ID',APP_ID)
+            
+
+            if (username){
+                window.location = '/'
+            }
+        })
+    </script>
+
+{% endblock content %}
