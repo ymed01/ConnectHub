@@ -15,6 +15,10 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
+print("DB_NAME:", os.getenv('DB_NAME'))
+print("DB_USER:", os.getenv('DB_USER'))
+print("DB_HOST:", os.getenv('DB_HOST'))
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -103,7 +107,7 @@ DATABASES = {
         'USER': os.getenv('DB_USER'),       
         'PASSWORD': os.getenv('DB_PASSWORD'), 
         'HOST': os.getenv('DB_HOST'),        
-        'PORT': os.getenv('DB_PORT', '6543'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
