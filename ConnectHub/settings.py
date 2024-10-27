@@ -84,7 +84,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'public_chat.wsgi.application'
+WSGI_APPLICATION = 'ConnectHub.wsgi.application'
 
 
 # Database
